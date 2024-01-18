@@ -1,0 +1,11 @@
+[project]
+name = "calypso-go"
+version = "1.0.0"
+dependencies = [
+    "pywebview",
+    "pycairo",
+    "PyGObject",
+    "pylint",
+    "mypy",
+    "autopep8",
+]
