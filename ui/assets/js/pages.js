@@ -16,3 +16,5 @@ class Pages {
         this.pages.push(page);
     }
 }
+
+export { Pages };

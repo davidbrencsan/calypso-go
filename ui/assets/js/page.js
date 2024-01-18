@@ -12,3 +12,5 @@ class Page {
         this.wrapper.setAttribute('hidden', 'hidden');
     }
 }
+
+export { Page };

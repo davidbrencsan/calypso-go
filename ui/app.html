@@ -1,26 +1,33 @@
 <!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
 
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>Calypso Go</title>
-        <link rel="stylesheet" href="assets/css/app.css">
-    </head>
-    <body>
+    <!-- Basic meta tags -->
+    <meta charset="utf-8">
+    <title>Calypso Go</title>
 
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/app.css">
+
+</head>
+<body>
+
+    <!-- Device selector page -->
     <section id="device-selector-page" hidden>
         Selector
     </section>
 
+    <!-- Device pairing page -->
     <section id="device-pairing-page" hidden>
         Pairing
     </section>
 
-    </body>
-</html> 
+    <!-- Script modules -->
+    <script type="module" src="assets/js/pages/device-pairing.js"></script>
+    <script type="module" src="assets/js/pages/device-selector.js"></script>
+    <script type="module" src="assets/js/page.js"></script>
+    <script type="module" src="assets/js/pages.js"></script>
+    <script type="module" src="assets/js/app.js"></script>
 
-<script src="assets/js/page.js"></script>
-<script src="assets/js/pages.js"></script>
-<script src="assets/js/pages/device-pairing.js"></script>
-<script src="assets/js/pages/device-selector.js"></script>
-<script src="assets/js/app.js"></script>
+</body>
+</html>
