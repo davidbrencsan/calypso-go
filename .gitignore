@@ -1,6 +1,14 @@
-*.sublime-workspace
-.venv
-*.egg-info/
-__pycache__/
+# App files
 ui/assets/css/app.css
 ui/assets/js/scripts.js
+
+# Byte-compiled / distribution / packaging
+*.egg-info/
+__pycache__/
+
+# Environments
+.venv
+venv
+
+# IDE files
+*.sublime-workspace
