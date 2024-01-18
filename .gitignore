@@ -1,3 +1,6 @@
 *.sublime-workspace
 .venv
 *.egg-info/
+__pycache__/
+ui/assets/css/app.css
+ui/assets/js/scripts.js
