@@ -1,0 +1,48 @@
+/* Fonts component */
+@font-face {
+	font-display: swap;
+	font-family: 'Source Code Pro';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Source Code Pro'), local('SourceCodePro-Regular'), url('../fonts/source-code-pro/400.woff2') format('woff2'), url('../fonts/source-code-pro/400.woff') format('woff');
+}
+
+@font-face {
+	font-display: swap;
+	font-family: 'Source Sans Pro';
+	font-style: normal;
+	font-weight: 300;
+	src: local('Source Sans Pro Light'), local('SourceSansPro-Light'), url('../fonts/source-sans-pro/300.woff2') format('woff2'), url('../fonts/source-sans-pro/300.woff') format('woff');
+}
+
+@font-face {
+	font-display: swap;
+	font-family: 'Source Sans Pro';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Source Sans Pro Regular'), local('SourceSansPro-Regular'), url('../fonts/source-sans-pro/400.woff2') format('woff2'), url('../fonts/source-sans-pro/400.woff') format('woff');
+}
+
+@font-face {
+	font-display: swap;
+	font-family: 'Source Sans Pro';
+	font-style: italic;
+	font-weight: 400;
+	src: local('Source Sans Pro Italic'), local('SourceSansPro-Italic'), url('../fonts/source-sans-pro/400i.woff2') format('woff2'), url('../fonts/source-sans-pro/400i.woff') format('woff');
+}
+
+@font-face {
+	font-display: swap;
+	font-family: 'Source Sans Pro';
+	font-style: normal;
+	font-weight: 700;
+	src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'), url('../fonts/source-sans-pro/700.woff2') format('woff2'), url('../fonts/source-sans-pro/700.woff') format('woff');
+}
+
+@font-face {
+	font-display: swap;
+	font-family: 'Source Sans Pro';
+	font-style: italic;
+	font-weight: 700;
+	src: local('Source Sans Pro Bold Italic'), local('SourceSansPro-BoldItalic'), url('../fonts/source-sans-pro/700i.woff2') format('woff2'), url('../fonts/source-sans-pro/700i.woff') format('woff');
+}

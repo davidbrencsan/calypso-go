@@ -1,0 +1,46 @@
+// List typography variables
+$scheme-includes-list-typography: true;
+
+/* List typography */
+ul, ol {
+	margin: 0 0 $element-margin 0;
+	padding-left: 1.25rem;
+
+	li {
+		padding-left: 0.25rem;
+	}
+
+	ul, ol {
+		margin-bottom: 0;
+	}
+}
+
+dl {
+	margin: 0 0 $element-margin 0;
+
+	dt {
+		color: $fg-bold-color;
+		display: block;
+		font-family: $heading-font-family;
+		font-weight: $heading-font-weight;
+		letter-spacing: $heading-letter-spacing;
+		line-height: $heading-line-height;
+		margin: 0 0 $block-margin 0;
+	}
+
+	dd {
+		margin-left: 0;
+	}
+}
+
+// Scheme specific list typography
+@each $scheme in map-keys($schemes) {
+	@if (map-val($schemes, $scheme, generate-scheme) and $scheme-includes-list-typography) {
+		.scheme--#{$scheme} {
+
+			dl dt {
+				color: map-val($schemes, $scheme, fg-bold-color);
+			}
+		}
+	}
+}

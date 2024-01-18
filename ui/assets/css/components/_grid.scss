@@ -1,0 +1,166 @@
+/* Grid component prototype */
+.grid {
+	display: flex;
+	flex-flow: row wrap;
+	list-style: none;
+	padding-left: 0;
+
+	&.grid--uniform {
+
+		> .grid-col > :first-child {
+			margin-top: 0;
+		}
+
+		> .grid-col > :last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&.grid--gutter {
+		margin-left: ($grid-gutter * -1);
+
+		> .grid-col {
+			padding-left: ($grid-gutter);
+		}
+
+		&.grid--uniform {
+			margin-top: ($grid-gutter * -1);
+
+			> .grid-col {
+				padding-top: ($grid-gutter);
+			}
+		}
+
+		&.grid--gutter--double {
+			margin-left: ($grid-gutter * -2);
+
+			> .grid-col {
+				padding-left: ($grid-gutter * 2);
+			}
+
+			&.grid--uniform {
+				margin-top: ($grid-gutter * -2);
+
+				> .grid-col {
+					padding-top: ($grid-gutter * 2);
+				}
+			}
+		}
+
+		&.grid--gutter--half {
+			margin-left: ($grid-gutter * -0.5);
+
+			> .grid-col {
+				padding-left: ($grid-gutter * 0.5);
+			}
+
+			&.grid--uniform {
+				margin-top: ($grid-gutter * -0.5);
+
+				> .grid-col {
+					padding-top: ($grid-gutter * 0.5);
+				}
+			}
+		}
+
+		&.grid--gutter--quarter {
+			margin-left: ($grid-gutter * -0.25);
+
+			> .grid-col {
+				padding-left: ($grid-gutter * 0.25);
+			}
+
+			&.grid--uniform {
+				margin-top: ($grid-gutter * -0.25);
+
+				> .grid-col {
+					padding-top: ($grid-gutter * 0.25);
+				}
+			}
+		}
+	}
+
+	&.grid--top {
+		align-items: flex-start;
+	}
+
+	&.grid--middle {
+		align-items: center;
+	}
+
+	&.grid--bottom {
+		align-items: flex-end;
+	}
+
+	&.grid--left {
+		justify-content: flex-start;
+	}
+
+	&.grid--center {
+		justify-content: center;
+	}
+
+	&.grid--right {
+		justify-content: flex-end;
+	}
+
+	&.grid--between {
+		justify-content: space-between;
+	}
+
+	&.grid--around {
+		justify-content: space-around;
+	}
+
+	> .grid-col {
+		flex: 0 1 auto;
+		padding-left: 0;
+
+		&.grid-col--fit {
+			flex: 1;
+			max-width: 100%;
+		}
+
+		&.grid-col--full {
+			flex: 0 0 100%;
+			max-width: 100%;
+		}
+
+		&.grid-col--important {
+			order: -1;
+		}
+
+		@for $i from 2 through $grid-columns {
+			&.grid-col--1of#{$i} {
+				flex: 0 0 math.div(100%, $i);
+				max-width: math.div(100%, $i);
+			}
+		}
+
+		@each $breakpoint in map-keys($breakpoints) {
+			@media #{map-get($breakpoints, $breakpoint)} {
+
+				&.grid-col--#{$breakpoint}--fit {
+					flex: 1;
+					max-width: 100%;
+				}
+
+				&.grid-col--#{$breakpoint}--full {
+					flex: 0 0 100%;
+					max-width: 100%;
+				}
+
+				&.grid-col--#{$breakpoint}--important {
+					order: -1;
+				}
+
+				@for $i from 2 through $grid-columns {
+					&.grid-col--#{$breakpoint}--1of#{$i} {
+						flex: 0 0 math.div(100%, $i);
+						max-width: math.div(100%, $i);
+					}
+				}
+			}
+		}
+	}
+}

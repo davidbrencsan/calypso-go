@@ -1,0 +1,49 @@
+// Blockquote typography variables
+$scheme-includes-blockquote-typography: true;
+
+/* Blockquote typography */
+blockquote {
+	font-size: $large-font-size;
+	margin: 0 0 $element-margin 0;
+	padding: 0 2rem;
+	position: relative;
+	text-align: center;
+
+	&:before, &:after {
+		font-size: 3rem;
+		line-height: 1;
+		position: absolute;
+	}
+
+	&:before {
+		content: "\201C";
+		left: 0;
+		top: 0;
+	}
+
+	&:after {
+		content: "\201D";
+		right: 0;
+		top: 0;
+	}
+
+	cite {
+		color: $fg-light-color;
+		display: block;
+		font-size: $normal-font-size;
+		font-style: normal;
+		margin-top: ($element-margin * 0.5);
+	}
+}
+
+// Scheme specific blockquote typography
+@each $scheme in map-keys($schemes) {
+	@if (map-val($schemes, $scheme, generate-scheme) and $scheme-includes-blockquote-typography) {
+		.scheme--#{$scheme} {
+
+			blockquote cite {
+				color: map-val($schemes, $scheme, fg-light-color);
+			}
+		}
+	}
+}

@@ -1,0 +1,51 @@
+// Header component variables
+$header-generate-scheme: true;
+
+/* Header component prototype */
+header.header {
+
+	p {
+		color: $fg-light-color;
+		margin: ($block-margin * -1) 0 $block-margin 0;
+	}
+
+	h1 + p, .h1 + p {
+		font-size: $subheading-1-font-size;
+	}
+
+	h2 + p, .h2 + p {
+		font-size: $subheading-2-font-size;
+	}
+
+	h3 + p, .h3 + p {
+		font-size: $subheading-3-font-size;
+	}
+
+	h4 + p, .h4 + p {
+		font-size: $subheading-4-font-size;
+	}
+
+	h5 + p, .h5 + p {
+		font-size: $subheading-5-font-size;
+	}
+
+	h6 + p, .h6 + p {
+		font-size: $subheading-6-font-size;
+	}
+}
+
+/* Header component extensions */
+header.header {
+}
+
+/* Header component scheme modifications */
+@each $scheme in map-keys($schemes) {
+	@if (map-val($schemes, $scheme, generate-scheme) and $header-generate-scheme) {
+		.scheme--#{$scheme} {
+
+			header.header p {
+				color: map-val($schemes, $scheme, fg-light-color);
+			}
+		}
+	}
+}

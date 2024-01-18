@@ -1,0 +1,88 @@
+/* Helpers typography */
+.float-left {
+	float: left;
+}
+
+.float-right {
+	float: right;
+}
+
+.is-visually-hidden {
+	border: 0;
+	clip: rect(0,0,0,0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+
+.is-hidden {
+	display: none;
+}
+
+.truncate {
+	display: block;
+	max-width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.top-element-margin {
+	margin-top: $element-margin;
+}
+
+.bottom-element-margin {
+	margin-bottom: $element-margin;
+}
+
+.top-block-margin {
+	margin-top: $block-margin;
+}
+
+.bottom-block-margin {
+	margin-bottom: $block-margin;
+}
+
+.top-gutter-margin {
+	margin-top: $grid-gutter;
+}
+
+.bottom-gutter-margin {
+	margin-bottom: $grid-gutter;
+}
+
+.text-left {
+	text-align: left;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.text-right {
+	text-align: right;
+}
+
+@each $breakpoint in map-keys($breakpoints) {
+	@media #{map-get($breakpoints, $breakpoint)} {
+
+		.#{$breakpoint}-is-hidden {
+			display: none;
+		}
+
+		.#{$breakpoint}-text-left {
+			text-align: left;
+		}
+
+		.#{$breakpoint}-text-center {
+			text-align: center;
+		}
+
+		.#{$breakpoint}-text-right {
+			text-align: right;
+		}
+	}
+}

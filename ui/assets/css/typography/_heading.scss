@@ -1,0 +1,49 @@
+// Heading typography variables
+$scheme-includes-heading-typography: true;
+
+/* Heading typography */
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .heading {
+	color: $fg-bold-color;
+	display: block;
+	font-family: $heading-font-family;
+	font-weight: $heading-font-weight;
+	letter-spacing: $heading-letter-spacing;
+	line-height: $heading-line-height;
+	margin: 0 0 $block-margin 0;
+}
+
+h1, .h1 {
+	font-size: $heading-1-font-size;
+}
+
+h2, .h2 {
+	font-size: $heading-2-font-size;
+}
+
+h3, .h3 {
+	font-size: $heading-3-font-size;
+}
+
+h4, .h4 {
+	font-size: $heading-4-font-size;
+}
+
+h5, .h5 {
+	font-size: $heading-5-font-size;
+}
+
+h6, .h6 {
+	font-size: $heading-6-font-size;
+}
+
+// Scheme specific heading typography
+@each $scheme in map-keys($schemes) {
+	@if (map-val($schemes, $scheme, generate-scheme) and $scheme-includes-heading-typography) {
+		.scheme--#{$scheme} {
+
+			h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+				color: map-val($schemes, $scheme, fg-bold-color);
+			}
+		}
+	}
+}

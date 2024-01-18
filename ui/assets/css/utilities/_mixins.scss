@@ -1,0 +1,8 @@
+// Wraps @content to a @media block targeting a specific breakpoint
+@mixin breakpoint($breakpoint) {
+	@if map-has-key($breakpoints, $breakpoint) {
+		@media screen and #{map-get($breakpoints, $breakpoint)} {
+			@content;
+		}
+	}
+}

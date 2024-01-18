@@ -1,0 +1,122 @@
+// Base typography variables
+$scheme-includes-base-typography: true;
+
+/* Base typography */
+html {
+	font-size: 18px;
+
+	@include breakpoint('medium') {
+		font-size: 17px;
+	}
+
+	@include breakpoint('small') {
+		font-size: 16px;
+	}
+}
+
+body {
+	background-color: $body-bg-color;
+}
+
+body, input, optgroup, select, textarea, button {
+	color: $fg-color;
+	font-family: $base-font-family;
+	font-size: $normal-font-size;
+	font-weight: $base-font-weight;
+	letter-spacing: $base-letter-spacing;
+	line-height: $base-line-height;
+}
+
+b, strong, .strong {
+	font-weight: $bold-font-weight;
+}
+
+em, i, var, dfn, cite, .em {
+	font-style: italic;
+}
+
+abbr[title] {
+	border-bottom: none;
+	cursor: help;
+	text-decoration: underline;
+}
+
+small {
+	font-size: $small-font-size;
+}
+
+hr {
+	border: 0;
+	border-bottom: 1px solid $border-color;
+	margin: 0;
+}
+
+sub, sup {
+	font-size: $small-font-size;
+	position: relative;
+	vertical-align: middle;
+}
+
+sub {
+	top: 0.2rem;
+}
+
+sup {
+	top: -0.2rem;
+}
+
+pre, code, kbd, samp {
+	font-family: $fixed-font-family;
+	font-weight: $fixed-font-weight;
+	letter-spacing: $fixed-letter-spacing;
+	line-height: $fixed-line-height;
+}
+
+code, kbd {
+	border-radius: $border-radius;
+	font-size: $small-font-size;
+	padding: 0.25em 0.5em;
+}
+
+code {
+	background-color: $border-bg-color;
+	color: $fg-color;
+}
+
+kbd {
+	background-color: $fg-color;
+	color: $bg-color;
+}
+
+pre {
+	margin: 0 0 $element-margin 0;
+
+	> code {
+		display: block;
+		overflow-x: auto;
+		padding: $box-padding;
+	}
+}
+
+// Scheme specific base typography
+@each $scheme in map-keys($schemes) {
+	@if (map-val($schemes, $scheme, generate-scheme) and $scheme-includes-base-typography) {
+		.scheme--#{$scheme} {
+			color: map-val($schemes, $scheme, fg-color);
+
+			hr {
+				border-color: map-val($schemes, $scheme, border-color);
+			}
+
+			code {
+				background-color: map-val($schemes, $scheme, border-bg-color);
+				color: map-val($schemes, $scheme, fg-color);
+			}
+
+			kbd {
+				background-color: map-val($schemes, $scheme, fg-color);
+				color: map-val($schemes, $scheme, bg-color);
+			}
+		}
+	}
+}

@@ -1,0 +1,8 @@
+/* Focus */
+*:focus {
+	outline: 0;
+}
+
+.keyboard-focus:focus {
+	outline: 3px solid $focus-color;
+}

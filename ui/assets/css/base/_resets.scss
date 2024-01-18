@@ -1,0 +1,45 @@
+/* Resets */
+html {
+	box-sizing: border-box;
+	touch-action: manipulation;
+}
+
+*, *:after, *:before {
+	box-sizing: inherit
+}
+
+body, form, fieldset, legend, input, select, textarea, button {
+	margin: 0;
+}
+
+body {
+	min-width: 320px;
+}
+
+fieldset, legend {
+	padding: 0;
+}
+
+fieldset {
+	border: 0;
+}
+
+input, select, textarea, button, label, a, div {
+	-webkit-tap-highlight-color: transparent;
+}
+
+input, button, hr {
+	overflow: visible;
+}
+
+input:invalid {
+	box-shadow: none;
+}
+
+input::-ms-clear {
+	display: none;
+}
+
+select::-ms-expand {
+	display: none;
+}

@@ -1,0 +1,114 @@
+// Size variables
+$block-margin: 0.5rem;
+$border-radius: 4px;
+$box-arrow: 10px;
+$box-padding: 1rem;
+$container-width: 60rem;
+$element-height: 2.5em;
+$element-margin: 2.5rem;
+$grid-columns: 6;
+$grid-gutter: 1.5rem;
+$section-padding: 4rem;
+
+// Font size variables
+$small-font-size: 0.8rem;
+$normal-font-size: 1rem;
+$large-font-size: 1.2rem;
+$subnav-font-size: 0.9rem;
+
+// Heading font size variables
+$heading-1-font-size: 2rem;
+$heading-2-font-size: 1.8rem;
+$heading-3-font-size: 1.6rem;
+$heading-4-font-size: 1.4rem;
+$heading-5-font-size: 1.2rem;
+$heading-6-font-size: 1rem;
+
+// Subheading font size variables
+$subheading-1-font-size: 1.3rem;
+$subheading-2-font-size: 1.2rem;
+$subheading-3-font-size: 1.1rem;
+$subheading-4-font-size: 1rem;
+$subheading-5-font-size: 0.9rem;
+$subheading-6-font-size: 0.8rem;
+
+// Font weight variables
+$light-font-weight: 300;
+$normal-font-weight: 400;
+$bold-font-weight: 700;
+
+// Font families
+$base-font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
+$fixed-font-family: 'Source Code Pro', monospace;
+$heading-font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
+$nav-font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
+
+// Font weights
+$base-font-weight: $normal-font-weight;
+$fixed-font-weight: $normal-font-weight;
+$heading-font-weight: $bold-font-weight;
+$nav-font-weight: $bold-font-weight;
+
+// Font line heights
+$base-line-height: 1.5;
+$fixed-line-height: 1.5;
+$heading-line-height: 1.5;
+$nav-line-height: 1.5;
+
+// Font letter spacing
+$base-letter-spacing: 0;
+$fixed-letter-spacing: 0;
+$heading-letter-spacing: 0;
+$nav-letter-spacing: 0;
+
+// Initial colors
+$bg-color: #ffffff;
+$body-bg-color: #ffffff;
+$border-bg-color: #fafafa;
+$border-color: #dddddd;
+$fg-bold-color: #383838;
+$fg-color: #484848;
+$fg-light-color: #686868;
+$focus-color: #fba026;
+$link-color: #eb6b56;
+
+// Breakpoints
+$breakpoints: (
+	large: '(max-width: 82em)',
+	medium: '(max-width: 62em)',
+	small: '(max-width: 47em)',
+	xsmall: '(max-width: 32em)'
+);
+
+// Schemes
+$schemes: (
+	primary: (
+		bg-color: #EB6B56,
+		border-bg-color: rgba(255,255,255,0.1),
+		border-color: #ec9e90,
+		fg-bold-color: #ffffff,
+		fg-color: #ffebeb,
+		fg-light-color: #ffc3c3,
+		generate-scheme: true,
+		link-color: #ffffff
+	)
+);
+
+// States
+$states: (
+	success: (
+		bg-color: #1a8c8a,
+		fg-bold-color: #ffffff,
+		fg-color: #e9f6f5
+	),
+	error: (
+		bg-color: #e43725,
+		fg-bold-color: #ffffff,
+		fg-color: #fdedec
+	),
+	warning: (
+		bg-color: #e08e0b,
+		fg-bold-color: #ffffff,
+		fg-color: #fef5e7
+	)
+);

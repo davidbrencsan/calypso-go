@@ -1,0 +1,35 @@
+// Box component variables
+$box-generate-scheme: true;
+
+/* Box component prototype */
+div.box {
+	background-color: $bg-color;
+	border-radius: $border-radius;
+	border: 1px solid $border-color;
+	display: block;
+	margin-bottom: $element-margin;
+	padding: $box-padding;
+
+	> :last-child,
+	> :last-child > :last-child,
+	> :last-child > :last-child > :last-child {
+		margin-bottom: 0;
+	}
+}
+
+/* Box component extensions */
+div.box {
+}
+
+/* Box component scheme modifications */
+@each $scheme in map-keys($schemes) {
+	@if (map-val($schemes, $scheme, generate-scheme) and $box-generate-scheme) {
+		.scheme--#{$scheme} {
+
+			div.box {
+				background-color: transparent;
+				border-color: map-val($schemes, $scheme, border-color);
+			}
+		}
+	}
+}
