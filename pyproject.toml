@@ -1,5 +1,5 @@
 [project]
-name = "calypso-go"
+name = "calypso_go"
 version = "1.0.0"
 dependencies = [
     "pywebview",
@@ -8,4 +8,8 @@ dependencies = [
     "pylint",
     "mypy",
     "autopep8",
+    "jsmin",
 ]
+
+[tool.setuptools]
+py-modules = ["calypso_go"]

@@ -1,0 +1,15 @@
+{
+    "version": "1.0.0",
+    "tasks": [
+        {
+            "label": "Build Script and Style",
+            "type": "shell",
+            "command": "${command:python.interpreterPath}",
+            "args": ["build.py", "-c", "-s"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
