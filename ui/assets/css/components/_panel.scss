@@ -1,0 +1,58 @@
+/* Panel component */
+div.panel {
+    margin-bottom: $element-height;
+
+    > header.panel-header {
+        text-align: center;
+        margin-bottom: $element-margin;
+
+        img {
+            width: 6rem;
+            height: 6rem;
+            border-radius: 50%;
+            background-color: white;
+            flex: 0 1 auto;
+        }
+    }
+    > div.panel-body {
+        background-color: $border-bg-color;
+        border: 1px solid $border-color;
+        border-radius: $border-radius $border-radius 0 0;
+        overflow-y: scroll;
+        max-height: 50vh;
+    }
+
+    > ul.panel-actions {
+        @include reset-list();
+        display: flex;
+        flex-flow: row wrap;
+
+        > li {
+            flex: 1;
+            border-left: 1px solid $border-color;
+            border-bottom: 1px solid $border-color;
+            overflow: hidden;
+
+            &:first-child {
+                border-bottom-left-radius: $border-radius;
+            }
+
+            &:last-child {
+                border-bottom-right-radius: $border-radius;
+                border-right: 1px solid $border-color;
+            }
+
+             > a.button, > button.button {
+                width: 100%;
+                border-radius: initial;
+            }
+        }
+    }
+	
+}
+
+/* Panel component extensions */
+div.panel {
+
+}
+

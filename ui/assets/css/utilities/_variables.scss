@@ -1,14 +1,13 @@
 // Size variables
 $block-margin: 0.5rem;
-$border-radius: 4px;
-$box-arrow: 10px;
+$border-radius: 10px;
 $box-padding: 1rem;
 $container-width: 60rem;
 $element-height: 2.5em;
 $element-margin: 2.5rem;
 $grid-columns: 6;
 $grid-gutter: 1.5rem;
-$section-padding: 4rem;
+$page-padding: 4rem;
 
 // Font size variables
 $small-font-size: 0.8rem;
@@ -41,34 +40,29 @@ $bold-font-weight: 700;
 $base-font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
 $fixed-font-family: 'Source Code Pro', monospace;
 $heading-font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
-$nav-font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
 
 // Font weights
 $base-font-weight: $normal-font-weight;
 $fixed-font-weight: $normal-font-weight;
 $heading-font-weight: $bold-font-weight;
-$nav-font-weight: $bold-font-weight;
 
 // Font line heights
 $base-line-height: 1.5;
 $fixed-line-height: 1.5;
 $heading-line-height: 1.5;
-$nav-line-height: 1.5;
 
 // Font letter spacing
 $base-letter-spacing: 0;
 $fixed-letter-spacing: 0;
 $heading-letter-spacing: 0;
-$nav-letter-spacing: 0;
 
 // Initial colors
-$bg-color: #ffffff;
-$body-bg-color: #ffffff;
-$border-bg-color: #fafafa;
-$border-color: #dddddd;
-$fg-bold-color: #383838;
-$fg-color: #484848;
-$fg-light-color: #686868;
+$bg-color: #1e3c72;
+$bg-alt-color: #2a5298;
+$border-bg-color: #294a86;
+$border-color: #3d61a3;
+$fg-bold-color: #ffffff;
+$fg-color: #d3e2ff;
 $focus-color: #fba026;
 $link-color: #eb6b56;
 
@@ -78,20 +72,6 @@ $breakpoints: (
 	medium: '(max-width: 62em)',
 	small: '(max-width: 47em)',
 	xsmall: '(max-width: 32em)'
-);
-
-// Schemes
-$schemes: (
-	primary: (
-		bg-color: #EB6B56,
-		border-bg-color: rgba(255,255,255,0.1),
-		border-color: #ec9e90,
-		fg-bold-color: #ffffff,
-		fg-color: #ffebeb,
-		fg-light-color: #ffc3c3,
-		generate-scheme: true,
-		link-color: #ffffff
-	)
 );
 
 // States

@@ -1,0 +1,11 @@
+/* Page component */
+section.page {
+	padding: $page-padding 0 ($page-padding - $element-margin) 0;
+	background: linear-gradient(to right, $bg-color, $bg-alt-color);
+	width: 100vw;
+	height: 100vh;
+}
+
+/* Page component extensions */
+section.page {
+}

@@ -1,0 +1,76 @@
+/* Icon component prototype */
+.icon {
+	display: inline-block;
+	fill: currentColor;
+	height: 24px;
+	line-height: 1;
+	overflow: hidden;
+	pointer-events: none;
+	position: relative;
+	transform: translateX(0);
+	width: 24px;
+
+	// 16px icon
+	&.icon--16 {
+		height: 16px;
+		width: 16px;
+	}
+
+	// 32px icon
+	&.icon--32 {
+		height: 32px;
+		width: 32px;
+	}
+
+	// 40px icon
+	&.icon--40 {
+		height: 40px;
+		width: 40px;
+	}
+
+	// 64px icon
+	&.icon--64 {
+		height: 64px;
+		width: 64px;
+	}
+
+	// 128px icon
+	&.icon--128 {
+		height: 128px;
+		width: 128px;
+	}
+
+	// Left aligned icon
+	&.icon--left {
+		margin-right: 0.25em;
+	}
+
+	// Right aligned icon
+	&.icon--right {
+		margin-left: 0.25em;
+	}
+
+	// Icon aligned to the text baseline
+	&.icon--baseline {
+		margin-top: -0.2em;
+		vertical-align: middle;
+	}
+
+	// Spinning icon
+	&.icon--spin {
+		animation: 1s linear infinite icon-spin;
+	}
+}
+
+/* Icon component extensions */
+.icon {
+}
+
+@keyframes icon-spin {
+	0% {
+		transform: rotate3d(0, 0, 1, 0deg);
+	}
+	100% {
+		transform: rotate3d(0, 0, 1, 360deg);
+	}
+}

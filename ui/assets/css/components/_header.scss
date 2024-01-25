@@ -1,11 +1,8 @@
-// Header component variables
-$header-generate-scheme: true;
-
 /* Header component prototype */
 header.header {
 
 	p {
-		color: $fg-light-color;
+		color: $fg-color;
 		margin: ($block-margin * -1) 0 $block-margin 0;
 	}
 
@@ -38,14 +35,3 @@ header.header {
 header.header {
 }
 
-/* Header component scheme modifications */
-@each $scheme in map-keys($schemes) {
-	@if (map-val($schemes, $scheme, generate-scheme) and $header-generate-scheme) {
-		.scheme--#{$scheme} {
-
-			header.header p {
-				color: map-val($schemes, $scheme, fg-light-color);
-			}
-		}
-	}
-}

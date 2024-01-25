@@ -1,6 +1,3 @@
-// Base typography variables
-$scheme-includes-base-typography: true;
-
 /* Base typography */
 html {
 	font-size: 18px;
@@ -15,7 +12,7 @@ html {
 }
 
 body {
-	background-color: $body-bg-color;
+	background-color: $bg-color;
 }
 
 body, input, optgroup, select, textarea, button {
@@ -95,28 +92,5 @@ pre {
 		display: block;
 		overflow-x: auto;
 		padding: $box-padding;
-	}
-}
-
-// Scheme specific base typography
-@each $scheme in map-keys($schemes) {
-	@if (map-val($schemes, $scheme, generate-scheme) and $scheme-includes-base-typography) {
-		.scheme--#{$scheme} {
-			color: map-val($schemes, $scheme, fg-color);
-
-			hr {
-				border-color: map-val($schemes, $scheme, border-color);
-			}
-
-			code {
-				background-color: map-val($schemes, $scheme, border-bg-color);
-				color: map-val($schemes, $scheme, fg-color);
-			}
-
-			kbd {
-				background-color: map-val($schemes, $scheme, fg-color);
-				color: map-val($schemes, $scheme, bg-color);
-			}
-		}
 	}
 }

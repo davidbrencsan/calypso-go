@@ -10,11 +10,11 @@
     <link rel="stylesheet" href="assets/css/app.css">
 
 </head>
-<body>
+<body class="no-touch">
 
     <!-- Device selector page -->
     <section id="device-selector-page" class="page" hidden>
-        <div class="container">
+        <div class="container container--narrow">
         
             <div class="panel">
                 <header class="panel-header">
@@ -27,20 +27,61 @@
                         <li>
                             <article class="device-item">
                                 <img src="" alt="" width="" height="">
-                                <h2>Device name</h2>
-                                <p>Device description</p>
+                                <div class="device-item-info">
+                                    <h2>
+                                        <button class="device-item-info-connect">Device name</button>
+                                    </h2>
+                                    <p>Description: longer content</p>
+                                </div>
+                                <button class="button button--icon">
+                                    <svg class="icon" aria-hidden="true">
+                                        <use xlink:href="#icon-settings"></use>
+                                    </svg>
+                                </button>
+                            </article>
+                        </li>
+                        <li>
+                            <article class="device-item">
+                                <img src="" alt="" width="" height="">
+                                <div class="device-item-info">
+                                    <h2>
+                                        <button class="device-item-info-connect">Device name</button>
+                                    </h2>
+                                    <p>Description: longer content</p>
+                                </div>
+                                <button class="button button--icon">
+                                    <svg class="icon" aria-hidden="true">
+                                        <use xlink:href="#icon-settings"></use>
+                                    </svg>
+                                </button>
+                            </article>
+                        </li>
+                        <li>
+                            <article class="device-item">
+                                <img src="" alt="" width="" height="">
+                                <div class="device-item-info">
+                                    <h2>
+                                        <button class="device-item-info-connect">Device name</button>
+                                    </h2>
+                                    <p>Description: longer content</p>
+                                </div>
+                                <button class="button button--icon">
+                                    <svg class="icon" aria-hidden="true">
+                                        <use xlink:href="#icon-settings"></use>
+                                    </svg>
+                                </button>
                             </article>
                         </li>
                     </ul>
-                    <ul class="panel-body-actions">
-                        <li>
-                            <button class="button" type="button">Action 1</button>
-                        </li>
-                        <li>
-                            <button class="button" type="button">Action 2</button>
-                        </li>
-                    </ul>
                 </div>
+                <ul class="panel-actions">
+                    <li>
+                        <button class="button" type="button">Action 1</button>
+                    </li>
+                    <li>
+                        <button class="button" type="button">Action 2</button>
+                    </li>
+                </ul>
             </div>
         
         </div>
@@ -53,6 +94,8 @@
     </section>
 
     <!-- Script modules -->
+    <script type="module" src="assets/js/focus-tracker.js"></script>
+    <script type="module" src="assets/js/icons.js"></script>
     <script type="module" src="assets/js/page/device-pairing-page.js"></script>
     <script type="module" src="assets/js/page/device-selector-page.js"></script>
     <script type="module" src="assets/js/page.js"></script>

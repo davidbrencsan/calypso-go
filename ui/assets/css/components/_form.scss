@@ -1,11 +1,5 @@
 // Form component variables
-$form-control-generate-scheme: true;
 $form-control-switch-transition: 200ms ease;
-$form-fieldset-generate-scheme: true;
-$form-group-generate-scheme: true;
-$form-input-generate-scheme: true;
-$form-label-generate-scheme: true;
-$form-range-generate-scheme: true;
 
 /* Form component prototype */
 form.form {
@@ -83,35 +77,6 @@ textarea.form-input {
 
 /* Form input component extensions */
 input.form-input, select.form-input, textarea.form-input {
-}
-
-/* Form input component scheme modifications */
-@each $scheme in map-keys($schemes) {
-	@if (map-val($schemes, $scheme, generate-scheme) and $form-input-generate-scheme) {
-		.scheme--#{$scheme} {
-
-			input.form-input, select.form-input, textarea.form-input {
-				border-color: map-val($schemes, $scheme, border-color);
-				color: map-val($schemes, $scheme, fg-color);
-
-				&:disabled {
-					background-color: map-val($schemes, $scheme, border-bg-color);
-				}
-
-				&:focus {
-					border-color: map-val($schemes, $scheme, link-color);
-				}
-
-				&.form-input--select {
-					background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MCA1MCI+PHBhdGggZmlsbD0iI2ZmZmZmZjk5IiBkPSJNMjUgMzIuNGwtOS43LTkuNyAxLjQtMS40IDguMyA4LjMgOC4zLTguMyAxLjQgMS40eiIvPjwvc3ZnPg==');
-				}
-
-				&.keyboard-focus:focus {
-					border-color: $focus-color;
-				}
-			}
-		}
-	}
 }
 
 /* Form control component prototype */
@@ -217,44 +182,6 @@ label.form-control {
 
 /* Form control component extensions */
 label.form-control {
-}
-
-/* Form control component scheme modifications */
-@each $scheme in map-keys($schemes) {
-	@if (map-val($schemes, $scheme, generate-scheme) and $form-control-generate-scheme) {
-		.scheme--#{$scheme} {
-
-			label.form-control {
-
-				&.form-control--checkbox, &.form-control--radio {
-
-					span.form-control-indicator {
-						border-color: map-val($schemes, $scheme, border-color);
-					}
-
-					input:checked + span.form-control-indicator {
-						border-color: map-val($schemes, $scheme, link-color);
-						background-color: map-val($schemes, $scheme, border-bg-color);
-					}
-				}
-
-				&.form-control--switch {
-
-					span.form-control-indicator {
-						background-color: map-val($schemes, $scheme, fg-light-color);
-
-						&:before {
-							background-color: map-val($schemes, $scheme, bg-color);
-						}
-					}
-				}
-
-				input:checked + span.form-control-indicator {
-					background-color: map-val($schemes, $scheme, fg-bold-color);
-				}
-			}
-		}
-	}
 }
 
 /* Form range component prototype */
@@ -365,60 +292,6 @@ input.form-range {
 input.form-range {
 }
 
-/* Form range component scheme modifications */
-@each $scheme in map-keys($schemes) {
-	@if (map-val($schemes, $scheme, generate-scheme) and $form-range-generate-scheme) {
-		.scheme--#{$scheme} {
-
-			input.form-range {
-
-				&::-webkit-slider-runnable-track {
-					background-color: map-val($schemes, $scheme, border-color);
-				}
-
-				&::-moz-range-track {
-					background-color: map-val($schemes, $scheme, border-color);
-				}
-
-				&::-ms-fill-lower {
-					background-color: map-val($schemes, $scheme, border-color);
-				}
-
-				&::-ms-fill-upper {
-					background-color: map-val($schemes, $scheme, border-color);
-				}
-
-				&::-webkit-slider-thumb {
-					background-color: map-val($schemes, $scheme, link-color);
-				}
-
-				&::-moz-range-thumb {
-					background-color: map-val($schemes, $scheme, link-color);
-				}
-
-				&::-ms-thumb {
-					background-color: map-val($schemes, $scheme, link-color);
-				}
-
-				&:active {
-
-					&::-webkit-slider-thumb {
-						background: lighten(map-val($schemes, $scheme, link-color), 5);
-					}
-
-					&::-moz-range-thumb {
-						background: lighten(map-val($schemes, $scheme, link-color), 5);
-					}
-
-					&::-ms-thumb {
-						background: lighten(map-val($schemes, $scheme, link-color), 5);
-					}
-				}
-			}
-		}
-	}
-}
-
 /* Form range label component prototype */
 span.form-range-label {
 	display: block;
@@ -442,21 +315,9 @@ label.form-label, legend.form-label, span.form-label {
 label.form-label, legend.form-label, span.form-label {
 }
 
-/* Form label component scheme modifications */
-@each $scheme in map-keys($schemes) {
-	@if (map-val($schemes, $scheme, generate-scheme) and $form-label-generate-scheme) {
-		.scheme--#{$scheme} {
-
-			label.form-label, legend.form-label, span.form-label {
-				color: map-val($schemes, $scheme, fg-bold-color);
-			}
-		}
-	}
-}
-
 /* Form hint component prototype */
 span.form-hint {
-	color: $fg-light-color;
+	color: $fg-color;
 	display: block;
 	font-size: $small-font-size;
 
@@ -468,18 +329,6 @@ span.form-hint {
 
 /* Form hint component extensions */
 span.form-hint {
-}
-
-/* Form label component scheme modifications */
-@each $scheme in map-keys($schemes) {
-	@if (map-val($schemes, $scheme, generate-scheme) and $form-label-generate-scheme) {
-		.scheme--#{$scheme} {
-
-			span.form-hint {
-				color: map-val($schemes, $scheme, fg-light-color);
-			}
-		}
-	}
 }
 
 /* Form fieldset component prototype */
@@ -504,18 +353,6 @@ fieldset.form-fieldset {
 
 /* Form fieldset component extensions */
 fieldset.form-fieldset {
-}
-
-/* Form fieldset component scheme modifications */
-@each $scheme in map-keys($schemes) {
-	@if (map-val($schemes, $scheme, generate-scheme) and $form-fieldset-generate-scheme) {
-		.scheme--#{$scheme} {
-
-			fieldset.form-fieldset {
-				border-color: map-val($schemes, $scheme, border-color);
-			}
-		}
-	}
 }
 
 /* Form group component prototype */
@@ -562,27 +399,6 @@ ul.form-group-list.grid {
 
 /* Form group component extensions */
 ul.form-group-list.grid {
-}
-
-/* Form group component scheme modifications */
-@each $scheme in map-keys($schemes) {
-	@if (map-val($schemes, $scheme, generate-scheme) and $form-group-generate-scheme) {
-		.scheme--#{$scheme} {
-
-			ul.form-group-list.grid {
-
-				> li.grid-col:not(:last-child) {
-
-					input.form-input, select.form-input, textarea.form-input {
-
-						&:focus {
-							border-color: map-val($schemes, $scheme, link-color);
-						}
-					}
-				}
-			}
-		}
-	}
 }
 
 /* Form item component prototype */

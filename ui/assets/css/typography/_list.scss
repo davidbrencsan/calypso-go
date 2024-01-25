@@ -1,6 +1,3 @@
-// List typography variables
-$scheme-includes-list-typography: true;
-
 /* List typography */
 ul, ol {
 	margin: 0 0 $element-margin 0;
@@ -30,17 +27,5 @@ dl {
 
 	dd {
 		margin-left: 0;
-	}
-}
-
-// Scheme specific list typography
-@each $scheme in map-keys($schemes) {
-	@if (map-val($schemes, $scheme, generate-scheme) and $scheme-includes-list-typography) {
-		.scheme--#{$scheme} {
-
-			dl dt {
-				color: map-val($schemes, $scheme, fg-bold-color);
-			}
-		}
 	}
 }

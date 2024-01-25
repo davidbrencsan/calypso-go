@@ -1,5 +1,4 @@
 // Button component variables
-$button-link-generate-scheme: true;
 $button-subnav-box-shadow: 0 0 8px rgba(0,0,0,0.15);
 $button-subnav-transition-duration: 200ms;
 $button-subnav-transition: $button-subnav-transition-duration ease;
@@ -55,6 +54,11 @@ button.button {
 
 /* Button component extensions */
 a.button, button.button {
+
+	&.button--icon {
+		width: $element-height;
+		padding: 0;
+	}
 }
 
 /* Button group component prototype */
@@ -91,84 +95,6 @@ ul.button-group-list {
 ul.button-group-list {
 }
 
-/* Button subnav component prototype */
-div.button-subnav {
-	position: relative;
-
-	> ul {
-		background-color: $bg-color;
-		border-radius: $border-radius;
-		border: 1px solid $border-color;
-		box-shadow: $button-subnav-box-shadow;
-		left: 0;
-		list-style: none;
-		margin: 0;
-		max-height: 0;
-		opacity: 0;
-		padding-left: 0;
-		position: absolute;
-		top: 100%;
-		transform: translate3d(0, 1rem, 0);
-		transition: visibility $button-subnav-transition, transform $button-subnav-transition, opacity $button-subnav-transition, max-height $button-subnav-transition $button-subnav-transition-duration;
-		visibility: hidden;
-		z-index: $button-subnav-z-index;
-
-		> li {
-			padding: 0 ($box-padding * 0.5);
-
-			> a {
-				color: inherit;
-				display: block;
-				font-size: $subnav-font-size;
-				padding: ($box-padding * 0.5);
-				text-decoration: none;
-				white-space: nowrap;
-
-				body.no-touch &:hover {
-					color: $link-color;
-				}
-			}
-
-			&:first-child {
-				padding-top: ($box-padding * 0.5);
-			}
-
-			&:last-child {
-				padding-bottom: ($box-padding * 0.5);
-			}
-		}
-
-		&:before, &:after {
-			border: $box-arrow solid transparent;
-			content: '';
-			display: inline-block;
-			left: calc(#{$box-padding} - #{$box-arrow});
-			position: absolute;
-		}
-
-		&:before {
-			border-bottom-color: $border-color;
-			top: ($box-arrow * -2);
-		}
-
-		&:after {
-			border-bottom-color: $bg-color;
-			top: (($box-arrow * -2) + 1);
-		}
-
-		&.is-opened {
-			opacity: 1;
-			transform: translate3d(0, 0, 0);
-			transition: visibility $button-subnav-transition, transform $button-subnav-transition, opacity $button-subnav-transition;
-			visibility: visible;
-		}
-	}
-}
-
-/* Button subnav component extensions */
-div.button-subnav {
-}
-
 /* Button link component prototype */
 button.button-link {
 	background-color: transparent;
@@ -197,25 +123,3 @@ button.button-link {
 button.button-link {
 }
 
-/* Button link component scheme modifications */
-@each $scheme in map-keys($schemes) {
-	@if (map-val($schemes, $scheme, generate-scheme) and $button-link-generate-scheme) {
-		.scheme--#{$scheme} {
-
-			button.button-link {
-
-				body.no-touch &:hover {
-					color: map-val($schemes, $scheme, link-color);
-				}
-
-				&:disabled {
-					color: mix(map-val($schemes, $scheme, fg-color), map-val($schemes, $scheme, bg-color), 50%);
-
-					body.no-touch &:hover {
-						color: mix(map-val($schemes, $scheme, fg-color), map-val($schemes, $scheme, bg-color), 50%);
-					}
-				}
-			}
-		}
-	}
-}

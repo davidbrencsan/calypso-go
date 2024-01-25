@@ -1,0 +1,89 @@
+/* Device list component */
+ul.device-list {
+    @include reset-list();
+
+    > li {
+        border-top: 1px solid $border-color;
+
+        &:first-child {
+            border-top: none;
+        }
+    }
+
+}
+
+/* Device list component extension */
+ul.device-list {
+
+}
+
+/* Device component */
+article.device-item {
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    padding: $box-padding;
+
+    img {
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+        background-color: white;
+        flex: 0 1 auto;
+    }
+
+    div.device-item-info {
+        flex: 1;
+        margin-left: $grid-gutter;
+
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: $bold-font-weight;
+            font-size: $large-font-size;
+            margin-bottom: 0;
+
+            button.device-item-info-connect {
+                border: none;
+                background-color: transparent;
+                color: inherit;
+                cursor: pointer;
+                display: inline-block;
+                padding: 0;
+                text-align: left;
+                font-weight: inherit;
+                margin: 0;
+                font-size: inherit;
+
+                &:after {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+        
+        p {
+            margin-bottom: 0;
+            font-size: $small-font-size;
+        }
+
+    }
+
+    button.button {
+        flex: 0 1 auto;
+        z-index: 1;
+    }
+
+    body.no-touch &:hover, &:active {
+        background-color: darken($border-bg-color, 3);
+    }
+	
+}
+
+/* Device component extensions */
+article.device-item {
+
+}

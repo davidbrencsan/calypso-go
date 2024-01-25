@@ -1,6 +1,3 @@
-// Blockquote typography variables
-$scheme-includes-blockquote-typography: true;
-
 /* Blockquote typography */
 blockquote {
 	font-size: $large-font-size;
@@ -28,22 +25,10 @@ blockquote {
 	}
 
 	cite {
-		color: $fg-light-color;
+		color: $fg-color;
 		display: block;
 		font-size: $normal-font-size;
 		font-style: normal;
 		margin-top: ($element-margin * 0.5);
-	}
-}
-
-// Scheme specific blockquote typography
-@each $scheme in map-keys($schemes) {
-	@if (map-val($schemes, $scheme, generate-scheme) and $scheme-includes-blockquote-typography) {
-		.scheme--#{$scheme} {
-
-			blockquote cite {
-				color: map-val($schemes, $scheme, fg-light-color);
-			}
-		}
 	}
 }
