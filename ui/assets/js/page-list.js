@@ -1,4 +1,4 @@
-class Pages {
+class PageList {
     constructor() {
         this.pages = [];
     }
@@ -17,4 +17,4 @@ class Pages {
     }
 }
 
-export { Pages };
+export { PageList };
