@@ -1,5 +1,5 @@
-import { DeviceSelectorPage } from "./pages/device-selector.js";
-import { DevicePairingPage } from "./pages/device-pairing.js";
+import { DeviceSelectorPage } from "./page/device-selector-page.js";
+import { DevicePairingPage } from "./page/device-pairing-page.js";
 import { Pages } from "./pages.js";
 import { Page } from "./page.js";
 
