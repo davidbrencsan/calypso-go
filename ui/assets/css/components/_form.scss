@@ -1,0 +1,612 @@
+// Form component variables
+$form-control-generate-scheme: true;
+$form-control-switch-transition: 200ms ease;
+$form-fieldset-generate-scheme: true;
+$form-group-generate-scheme: true;
+$form-input-generate-scheme: true;
+$form-label-generate-scheme: true;
+$form-range-generate-scheme: true;
+
+/* Form component prototype */
+form.form {
+	margin-bottom: $element-margin;
+}
+
+/* Form component extensions */
+form.form {
+}
+
+/* Form input component prototype */
+input.form-input, select.form-input, textarea.form-input {
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	background-color: transparent;
+	border-radius: $border-radius;
+	border: 1px solid $border-color;
+	display: block;
+	height: $element-height;
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+	vertical-align: middle;
+	width: 100%;
+
+	&::placeholder {
+		color: inherit;
+		opacity: 0.5;
+	}
+
+	&:-ms-input-placeholder {
+		color: inherit;
+		opacity: 0.5;
+	}
+
+	&::-ms-input-placeholder {
+		color: inherit;
+		opacity: 0.5;
+	}
+
+	&:disabled {
+		background-color: $border-bg-color;
+		cursor: not-allowed;
+	}
+
+	&:focus {
+		border-color: $link-color;
+	}
+
+	&.keyboard-focus:focus {
+		border-color: $focus-color;
+		box-shadow: inset 0 0 0 2px $focus-color;
+		outline: 0;
+	}
+}
+
+select.form-input {
+
+	&.form-input--select {
+		background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MCA1MCI+PHBhdGggZmlsbD0iIzAwMDAwMDk5IiBkPSJNMjUgMzIuNGwtOS43LTkuNyAxLjQtMS40IDguMyA4LjMgOC4zLTguMyAxLjQgMS40eiIvPjwvc3ZnPg==');
+		background-position: right 0% top 50%;
+		background-repeat: no-repeat;
+		background-size: 1.5em 1.5em;
+		padding-right: 1.5em;
+	}
+}
+
+textarea.form-input {
+
+	&.form-input--textarea {
+		height: auto;
+		padding: 0.5em;
+		resize: none;
+	}
+}
+
+/* Form input component extensions */
+input.form-input, select.form-input, textarea.form-input {
+}
+
+/* Form input component scheme modifications */
+@each $scheme in map-keys($schemes) {
+	@if (map-val($schemes, $scheme, generate-scheme) and $form-input-generate-scheme) {
+		.scheme--#{$scheme} {
+
+			input.form-input, select.form-input, textarea.form-input {
+				border-color: map-val($schemes, $scheme, border-color);
+				color: map-val($schemes, $scheme, fg-color);
+
+				&:disabled {
+					background-color: map-val($schemes, $scheme, border-bg-color);
+				}
+
+				&:focus {
+					border-color: map-val($schemes, $scheme, link-color);
+				}
+
+				&.form-input--select {
+					background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MCA1MCI+PHBhdGggZmlsbD0iI2ZmZmZmZjk5IiBkPSJNMjUgMzIuNGwtOS43LTkuNyAxLjQtMS40IDguMyA4LjMgOC4zLTguMyAxLjQgMS40eiIvPjwvc3ZnPg==');
+				}
+
+				&.keyboard-focus:focus {
+					border-color: $focus-color;
+				}
+			}
+		}
+	}
+}
+
+/* Form control component prototype */
+label.form-control {
+	display: inline-block;
+	position: relative;
+
+	input {
+		border: 0;
+		clip: rect(0,0,0,0);
+		height: 1px;
+		margin: -1px;
+		overflow: hidden;
+		padding: 0;
+		position: absolute;
+		width: 1px;
+	}
+
+	span.form-control-indicator {
+		cursor: pointer;
+		display: block;
+		left: 0;
+		position: absolute;
+		top: 0;
+	}
+
+	input.keyboard-focus:focus + span.form-control-indicator {
+		border-color: $focus-color;
+		box-shadow: inset 0 0 0 2px $focus-color;
+	}
+
+	input:checked.keyboard-focus:focus + span.form-control-indicator {
+		border-color: $focus-color;
+	}
+
+	input:disabled + span.form-control-indicator {
+		cursor: not-allowed;
+		opacity: 0.5;
+	}
+
+	&.form-control--checkbox, &.form-control--radio {
+		padding-left: 2rem;
+
+		span.form-control-indicator {
+			background-color: $bg-color;
+			border-radius: $border-radius;
+			border: solid 1px $border-color;
+			height: 1.5rem;
+			width: 1.5rem;
+		}
+
+		input:checked + span.form-control-indicator {
+			background-color: $link-color;
+			background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MCA1MCI+PHBhdGggZmlsbD0iI2ZmZmZmZiIgZD0iTSAyMS44MjI0MywzNi41NTA5MzUgOCwyMi43Mjg1MDUgMTAuMjI0Mjk5LDIwLjUwNDIwNiAyMS44MjI0MywzMi4xMDIzMzYgMzkuNzc1NzAxLDE0LjE0OTA2NSA0MiwxNi4zNzMzNjQgWiIgLz48L3N2Zz4K');
+			background-position: 50% 50%;
+			background-repeat: no-repeat;
+			background-size: 100% 100%;
+			border-color: $link-color;
+		}
+	}
+
+	&.form-control--radio {
+
+		span.form-control-indicator {
+			border-radius: 50%;
+		}
+	}
+
+	&.form-control--switch {
+		padding-left: 3.5rem;
+
+		span.form-control-indicator {
+			background-color: $border-color;
+			border-radius: 0.75rem;
+			border: none;
+			height: 1.5rem;
+			transition: background-color $form-control-switch-transition, opacity $form-control-switch-transition;
+			width: 3rem;
+
+			&:before {
+				background-color: $bg-color;
+				border-radius: 50%;
+				content: '';
+				height: 1.1rem;
+				left: 0.2rem;
+				position: absolute;
+				top: 0.2rem;
+				transition: transform $form-control-switch-transition;
+				width: 1.1rem;
+			}
+		}
+
+		input:checked + span.form-control-indicator {
+			background-color: $link-color;
+			background-image: none;
+
+			&:before {
+				transform: translate3d(1.5rem, 0, 0);
+			}
+		}
+	}
+}
+
+/* Form control component extensions */
+label.form-control {
+}
+
+/* Form control component scheme modifications */
+@each $scheme in map-keys($schemes) {
+	@if (map-val($schemes, $scheme, generate-scheme) and $form-control-generate-scheme) {
+		.scheme--#{$scheme} {
+
+			label.form-control {
+
+				&.form-control--checkbox, &.form-control--radio {
+
+					span.form-control-indicator {
+						border-color: map-val($schemes, $scheme, border-color);
+					}
+
+					input:checked + span.form-control-indicator {
+						border-color: map-val($schemes, $scheme, link-color);
+						background-color: map-val($schemes, $scheme, border-bg-color);
+					}
+				}
+
+				&.form-control--switch {
+
+					span.form-control-indicator {
+						background-color: map-val($schemes, $scheme, fg-light-color);
+
+						&:before {
+							background-color: map-val($schemes, $scheme, bg-color);
+						}
+					}
+				}
+
+				input:checked + span.form-control-indicator {
+					background-color: map-val($schemes, $scheme, fg-bold-color);
+				}
+			}
+		}
+	}
+}
+
+/* Form range component prototype */
+input.form-range {
+	-webkit-appearance: none;
+	background-color: transparent;
+	display: block;
+	padding: 0;
+	width: 100%;
+
+	// Range track styles
+	&::-webkit-slider-runnable-track {
+		background-color: $border-color;
+		border-radius: $border-radius;
+		height: 0.5em;
+	}
+
+	&::-moz-range-track {
+		background-color: $border-color;
+		border-radius: $border-radius;
+		height: 0.5em;
+	}
+
+	&::-ms-track {
+		background-color: transparent;
+		border-color: transparent;
+		border-width: 0.25em 0;
+		color: transparent;
+		height: 0.5em;
+	}
+
+	&::-ms-fill-lower {
+		background-color: $border-color;
+		border-radius: $border-radius;
+	}
+
+	&::-ms-fill-upper {
+		background-color: $border-color;
+		border-radius: $border-radius;
+	}
+
+	// Range thumb styles
+	&::-webkit-slider-thumb {
+		-webkit-appearance: none;
+		background-color: $link-color;
+		border-radius: 50%;
+		border: 0;
+		cursor: pointer;
+		height: 1em;
+		margin-top: -0.25em;
+		width: 1em;
+	}
+
+	&::-moz-range-thumb {
+		background-color: $link-color;
+		border-radius: 50%;
+		border: 0;
+		cursor: pointer;
+		height: 1em;
+		width: 1em;
+	}
+
+	&::-ms-thumb {
+		background-color: $link-color;
+		border-radius: 50%;
+		border: 0;
+		cursor: pointer;
+		height: 1em;
+		width: 1em;
+	}
+
+	&:active {
+
+		&::-webkit-slider-thumb {
+			background: lighten($link-color, 5);
+		}
+
+		&::-moz-range-thumb {
+			background: lighten($link-color, 5);
+		}
+
+		&::-ms-thumb {
+			background: lighten($link-color, 5);
+		}
+	}
+
+	&:focus {
+		outline: none;
+	}
+
+	&.keyboard-focus:focus {
+
+		&::-webkit-slider-thumb {
+			box-shadow: inset 0 0 0 2px $focus-color;
+		}
+
+		&::-moz-range-thumb {
+			box-shadow: inset 0 0 0 2px $focus-color;
+		}
+
+		&::-ms-thumb {
+			box-shadow: inset 0 0 0 2px $focus-color;
+		}
+	}
+}
+
+/* Form range component extensions */
+input.form-range {
+}
+
+/* Form range component scheme modifications */
+@each $scheme in map-keys($schemes) {
+	@if (map-val($schemes, $scheme, generate-scheme) and $form-range-generate-scheme) {
+		.scheme--#{$scheme} {
+
+			input.form-range {
+
+				&::-webkit-slider-runnable-track {
+					background-color: map-val($schemes, $scheme, border-color);
+				}
+
+				&::-moz-range-track {
+					background-color: map-val($schemes, $scheme, border-color);
+				}
+
+				&::-ms-fill-lower {
+					background-color: map-val($schemes, $scheme, border-color);
+				}
+
+				&::-ms-fill-upper {
+					background-color: map-val($schemes, $scheme, border-color);
+				}
+
+				&::-webkit-slider-thumb {
+					background-color: map-val($schemes, $scheme, link-color);
+				}
+
+				&::-moz-range-thumb {
+					background-color: map-val($schemes, $scheme, link-color);
+				}
+
+				&::-ms-thumb {
+					background-color: map-val($schemes, $scheme, link-color);
+				}
+
+				&:active {
+
+					&::-webkit-slider-thumb {
+						background: lighten(map-val($schemes, $scheme, link-color), 5);
+					}
+
+					&::-moz-range-thumb {
+						background: lighten(map-val($schemes, $scheme, link-color), 5);
+					}
+
+					&::-ms-thumb {
+						background: lighten(map-val($schemes, $scheme, link-color), 5);
+					}
+				}
+			}
+		}
+	}
+}
+
+/* Form range label component prototype */
+span.form-range-label {
+	display: block;
+	font-size: $small-font-size;
+}
+
+/* Form range label component extensions */
+span.form-range-label {
+}
+
+/* Form label component prototype */
+label.form-label, legend.form-label, span.form-label {
+	color: $fg-bold-color;
+	display: block;
+	font-size: $small-font-size;
+	font-weight: $bold-font-weight;
+	margin-bottom: $block-margin;
+}
+
+/* Form label component extensions */
+label.form-label, legend.form-label, span.form-label {
+}
+
+/* Form label component scheme modifications */
+@each $scheme in map-keys($schemes) {
+	@if (map-val($schemes, $scheme, generate-scheme) and $form-label-generate-scheme) {
+		.scheme--#{$scheme} {
+
+			label.form-label, legend.form-label, span.form-label {
+				color: map-val($schemes, $scheme, fg-bold-color);
+			}
+		}
+	}
+}
+
+/* Form hint component prototype */
+span.form-hint {
+	color: $fg-light-color;
+	display: block;
+	font-size: $small-font-size;
+
+	label.form-label + &, legend.form-label + &, span.form-label + & {
+		margin-bottom: $block-margin;
+		margin-top: ($block-margin * -1);
+	}
+}
+
+/* Form hint component extensions */
+span.form-hint {
+}
+
+/* Form label component scheme modifications */
+@each $scheme in map-keys($schemes) {
+	@if (map-val($schemes, $scheme, generate-scheme) and $form-label-generate-scheme) {
+		.scheme--#{$scheme} {
+
+			span.form-hint {
+				color: map-val($schemes, $scheme, fg-light-color);
+			}
+		}
+	}
+}
+
+/* Form fieldset component prototype */
+fieldset.form-fieldset {
+	border-radius: $border-radius;
+	border: 1px solid $border-color;
+	padding: $box-padding;
+
+	legend.form-fieldset-legend {
+		font-weight: $bold-font-weight;
+		margin-left: ($box-padding * -0.5);
+		padding: 0 ($box-padding * 0.5);
+	}
+
+	span.form-fieldset-hint {
+		display: block;
+		font-size: $small-font-size;
+		margin-bottom: $box-padding;
+		margin-top: (($box-padding * -1) + $block-margin);
+	}
+}
+
+/* Form fieldset component extensions */
+fieldset.form-fieldset {
+}
+
+/* Form fieldset component scheme modifications */
+@each $scheme in map-keys($schemes) {
+	@if (map-val($schemes, $scheme, generate-scheme) and $form-fieldset-generate-scheme) {
+		.scheme--#{$scheme} {
+
+			fieldset.form-fieldset {
+				border-color: map-val($schemes, $scheme, border-color);
+			}
+		}
+	}
+}
+
+/* Form group component prototype */
+ul.form-group-list.grid {
+
+	> li.grid-col {
+
+		input.form-input, select.form-input, textarea.form-input {
+			border-radius: 0;
+			position: relative;
+		}
+
+		&:first-child {
+
+			input.form-input, select.form-input, textarea.form-input, a.button, button.button {
+				border-radius: $border-radius 0 0 $border-radius;
+			}
+		}
+
+		&:last-child {
+
+			input.form-input, select.form-input, textarea.form-input, a.button, button.button {
+				border-radius: 0 $border-radius $border-radius 0;
+			}
+		}
+
+		&:not(:last-child) {
+
+			input.form-input, select.form-input, textarea.form-input, a.button, button.button {
+				border-right-color: transparent;
+				border-right-width: 0;
+			}
+
+			input.form-input, select.form-input, textarea.form-input {
+
+				&:not(.keyboard-focus):focus {
+					border-right-color: $link-color;
+					border-right-width: 1px;
+				}
+			}
+		}
+	}
+}
+
+/* Form group component extensions */
+ul.form-group-list.grid {
+}
+
+/* Form group component scheme modifications */
+@each $scheme in map-keys($schemes) {
+	@if (map-val($schemes, $scheme, generate-scheme) and $form-group-generate-scheme) {
+		.scheme--#{$scheme} {
+
+			ul.form-group-list.grid {
+
+				> li.grid-col:not(:last-child) {
+
+					input.form-input, select.form-input, textarea.form-input {
+
+						&:focus {
+							border-color: map-val($schemes, $scheme, link-color);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/* Form item component prototype */
+div.form-item {
+	position: relative;
+
+	&[data-label]:after {
+		content: attr(data-label);
+		display: block;
+		font-size: $small-font-size;
+		margin-top: $block-margin;
+		pointer-events: none;
+	}
+
+	&[data-label=""]:after {
+		display: none;
+	}
+
+	&.is-required > label.form-label:after, &.is-required > fieldset.form-fieldset > legend.form-label:after, &.is-required > span.form-label:after {
+		content: '*';
+		margin-left: 0.25em;
+	}
+}
+
+/* Form item component extensions */
+div.form-item {
+}
