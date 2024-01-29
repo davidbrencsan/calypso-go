@@ -31,9 +31,23 @@ class App {
 
         // Initialize icons
         Icons.init();
-        
 
+		// Add event listener
+		this.addEventListeners();
     }
+
+	addEventListeners() {
+		document.getElementById('device-selector-page-button').addEventListener('click', function () {
+			app.pages.showById('device-selector-page');
+		});
+
+		document.getElementById('device-pairing-page-button').addEventListener('click', () => {
+            this.pages.showById('device-pairing-page');
+        });
+	}
+
 }
 
 const app = new App();
+window.app = app;
+
