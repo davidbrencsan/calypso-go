@@ -37,12 +37,12 @@ class App {
     }
 
 	addEventListeners() {
-		document.getElementById('device-selector-page-button').addEventListener('click', function () {
+		document.getElementById('device-selector-page-button').addEventListener('click', function() {
 			app.pages.showById('device-selector-page');
 		});
 
-		document.getElementById('device-pairing-page-button').addEventListener('click', () => {
-            this.pages.showById('device-pairing-page');
+		document.getElementById('device-pairing-page-button').addEventListener('click', function() {
+            app.pages.showById('device-pairing-page');
         });
 	}
 
