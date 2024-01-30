@@ -9,6 +9,7 @@ dependencies = [
     "mypy",
     "autopep8",
     "jsmin",
+    "screeninfo"
 ]
 
 [tool.setuptools]
