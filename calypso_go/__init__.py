@@ -1,6 +1,5 @@
 import webview
 from screeninfo import get_monitors
-from typing import Tuple
 
 class Screen:
     def __init__(self) -> None:
