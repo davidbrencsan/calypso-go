@@ -33,7 +33,7 @@
                                     </h2>
                                     <p>Description: longer content</p>
                                 </div>
-                                <button class="button button--icon">
+                                <button class="button button--icon" data-route-onclick="device-settings-page" data-route-attrs="1">
                                     <svg class="icon" aria-hidden="true">
                                         <use xlink:href="#icon-settings"></use>
                                     </svg>
@@ -49,7 +49,7 @@
                                     </h2>
                                     <p>Description: longer content</p>
                                 </div>
-                                <button class="button button--icon">
+                                <button class="button button--icon" data-route-onclick="device-settings-page" data-route-attrs="2">
                                     <svg class="icon" aria-hidden="true">
                                         <use xlink:href="#icon-settings"></use>
                                     </svg>
@@ -65,7 +65,7 @@
                                     </h2>
                                     <p>Description: longer content</p>
                                 </div>
-                                <button class="button button--icon">
+                                <button class="button button--icon" data-route-onclick="device-settings-page" data-route-attrs="3">
                                     <svg class="icon" aria-hidden="true">
                                         <use xlink:href="#icon-settings"></use>
                                     </svg>
@@ -76,10 +76,7 @@
                 </div>
                 <ul class="panel-actions">
                     <li>
-                        <button id="device-pairing-page-button" class="button" type="button">Search new device</button>
-                    </li>
-                    <li>
-                        <button class="button" type="button">Action 2</button>
+                        <button class="button" type="button" data-route-onclick="device-pairing-page" data-route-attrs="">Search new device</button>
                     </li>
                 </ul>
             </div>
@@ -134,7 +131,35 @@
                         <button class="button" type="button">Search...</button>
                     </li>
                     <li>
-                        <button id="device-selector-page-button" class="button" type="button">Back</button>
+                        <button class="button" type="button" data-route-onclick="device-selector-page" data-route-attrs="">Back</button>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Device settings page -->
+    <section id="device-settings-page" class="page" hidden>
+        <div class="container container--narrow">
+
+            <div class="panel">
+
+                <header class="panel-header">
+                    <img src="" alt="" width="" height="">
+                    <h1>Device settings</h1>
+                </header>
+
+                <div class="panel-body">
+                </div>
+
+                <ul class="panel-actions">
+                    <li>
+                        <button class="button" type="button">Save settings</button>
+                    </li>
+                    <li>
+                        <button class="button" type="button" data-route-onclick="device-selector-page" data-route-attrs="">Back</button>
                     </li>
                 </ul>
 
@@ -148,6 +173,7 @@
     <script type="module" src="assets/js/icons.js"></script>
     <script type="module" src="assets/js/page/device-pairing-page.js"></script>
     <script type="module" src="assets/js/page/device-selector-page.js"></script>
+    <script type="module" src="assets/js/page/device-settings-page.js"></script>
     <script type="module" src="assets/js/page.js"></script>
     <script type="module" src="assets/js/page-list.js"></script>
     <script type="module" src="assets/js/app.js"></script>
