@@ -37,7 +37,6 @@ class App {
 		this.pages.initRouteTriggers();
     }
 
-
 }
 
 const app = new App();

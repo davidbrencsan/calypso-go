@@ -104,7 +104,7 @@
                                 <img src="assets/photos/mini.jpg" alt="" width="" height="">
                                 <div class="device-item-info">
                                     <h2>
-                                        <button class="device-item-info-connect">Ultrasonic Portable Mini wind meter </button>
+                                        <button class="device-item-info-connect">Ultrasonic Portable Mini wind meter</button>
                                     </h2>
                                     <p>MAC address: 2C:54:91:88:C9:E3</p>
                                 </div>
@@ -152,6 +152,65 @@
                 </header>
 
                 <div class="panel-body">
+                    <!-- Form example elements -->
+
+                    <form class="form">
+
+                    <ul class="grid grid--gutter grid--uniform">
+                        <li class="grid-col grid-col--full">
+                                <!-- <legend class="form-fieldset-legend">Device's name</legend>
+                                <span class="form-fieldset-hint">Give a name for the selected device.</span> -->
+                                <div class="form-item">
+                                <label class="form-label" for="country">Device's name</label>
+                                <input name="device-name" id="device-name" class="form-input" type="text" placeholder="Ultrasonic Portable Mini wind meter" />
+                                </div>
+                        </li>
+                        <li class="grid-col grid-col--full">
+                            <fieldset class="form-fieldset">
+                                <legend class="form-fildset-legend">Frequency</legend>
+                                <span>Give a frequency value</span>
+
+                                <ul class="grid form-group-list">
+                                    <li class="grid-col">
+                                        <label class="form-control form-control--radio form-control--radio--button">
+                                            <input name="frequency" type="radio" value="1" >
+                                            <span class="form-control-indicator"></span>
+                                            <span class="form-control-value">1 Hz</span>
+                                        </label>
+                                    </li>
+                                    <li class="grid-col">
+                                        <label class="form-control form-control--radio form-control--radio--button">
+                                            <input name="frequency" type="radio" value="2" >
+                                            <span class="form-control-indicator"></span>
+                                            <span class="form-control-value">2 Hz</span>
+
+                                        </label>
+                                    </li>
+                                    <li class="grid-col">
+                                        <label class="form-control form-control--radio form-control--radio--button">
+                                            <input name="frequency" type="radio" value="4" >
+                                            <span class="form-control-indicator"></span>
+                                            <span class="form-control-value">4 Hz</span>
+
+                                        </label>
+                                    </li>
+                                    <li class="grid-col">
+                                        <label class="form-control form-control--radio form-control--radio--button">
+                                            <input name="frequency" type="radio" value="8" >
+                                            <span class="form-control-indicator"></span>
+                                            <span class="form-control-value">8 Hz</span>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </fieldset>
+                        </li>   
+                    </ul>
+
+                </form>
+
+
+
+
                 </div>
 
                 <ul class="panel-actions">
@@ -159,10 +218,9 @@
                         <button class="button" type="button">Save settings</button>
                     </li>
                     <li>
-                        <button class="button" type="button" data-route-onclick="device-selector-page" data-route-attrs="">Back</button>
+                        <button class="button" type="button" data-route-onclick="device-selector-page" data-route-attrs="">Remove device</button>
                     </li>
                 </ul>
-
             </div>
         </div>
 
