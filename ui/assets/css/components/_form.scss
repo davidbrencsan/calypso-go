@@ -3,7 +3,16 @@ $form-control-switch-transition: 200ms ease;
 
 /* Form component prototype */
 form.form {
+	padding-top: 1em;
 	margin-bottom: $element-margin;
+
+	> ul {
+		> li {
+			padding-top: $box-padding;
+		}
+	}
+
+
 }
 
 /* Form component extensions */
@@ -374,13 +383,13 @@ span.form-hint {
 /* Form fieldset component prototype */
 fieldset.form-fieldset {
 	border-radius: $border-radius;
-	//border: 1px solid $border-color;
-	padding: $box-padding;
 
 	legend.form-fieldset-legend {
+		font-size: $small-font-size;
 		font-weight: $bold-font-weight;
 		margin-left: ($box-padding * -0.5);
 		padding: 0 ($box-padding * 0.5);
+		color: white;
 	}
 
 	span.form-fieldset-hint {
@@ -397,6 +406,7 @@ fieldset.form-fieldset {
 
 /* Form group component prototype */
 ul.form-group-list.grid {
+	padding-top: $box-padding;
 
 	> li.grid-col {
 
