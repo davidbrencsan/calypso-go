@@ -10,6 +10,16 @@
                 "kind": "build",
                 "isDefault": true
             }
+        },
+        {
+            "label": "Type checking",
+            "type": "shell",
+            "command": "${command:python.interpreterPath}",
+            "args": ["-m", "mypy", "${file}"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
         }
     ]
 }
