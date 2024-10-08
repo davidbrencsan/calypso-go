@@ -20,6 +20,16 @@
                 "kind": "build",
                 "isDefault": true
             }
+        },
+        {
+            "label": "Debug actual file",
+            "type": "shell",
+            "command": "${command:python.interpreterPath}",
+            "args": ["${file}"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
         }
     ]
 }
