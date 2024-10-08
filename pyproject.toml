@@ -9,7 +9,8 @@ dependencies = [
     "mypy",
     "autopep8",
     "jsmin",
-    "screeninfo"
+    "screeninfo",
+    "calypso-anemometer"
 ]
 
 [tool.setuptools]
